@@ -1,36 +1,27 @@
 import React, {Component} from 'react'
 import { Link } from 'gatsby'
 
-import React, {Component} from 'react';
-import "../Styles/Header.scss";
-
 class Header extends Component {
 
     render() {
         return (
-            <div className={"sticky-header"}>
-                <div className={'title'}>
+            <div style={styles.stickyHeader}>
+                <div style={styles.title}>
                     <h1>Applab USC</h1>
                 </div>
 
-                <div className={'links'}>
-                    <div style={styles.headerItem}>
-                        <Link to="/" style={styles.link}>
-                            Link 1
-                        </Link>
-                    </div>
+                <div style={styles.links}>
+                    <Link to="/" style={styles.link}>
+                        Link 1
+                    </Link>
 
-                    <div style={styles.headerItem}>
-                        <Link to="/" style={styles.link}>
-                            Link 2
-                        </Link>
-                    </div>
+                    <Link to="/" style={styles.link}>
+                        Link 2
+                    </Link>
 
-                    <div style={styles.headerItem}>
-                        <Link to="/" style={styles.link}>
-                            Link 3
-                        </Link>
-                    </div>
+                    <Link to="/" style={styles.link}>
+                        Link 3
+                    </Link>
                 </div>
             </div>
         )
@@ -38,11 +29,29 @@ class Header extends Component {
 }
 
 const styles = {
-    headerItem: {
+    stickyHeader: {
+        position: '-webkit-sticky', /* Safari */
+        position: 'sticky',
+        top: 0,
+        backgroundColor: 'aliceblue',
+        flexDirection: 'row',
         display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+    },
+    title: {
+        display: 'flex',
+        marginLeft: 20,
+        marginRight: 20,
+    },
+    links: {
+        display: 'flex',
+        flex: 1,
+        justifyContent: 'space-evenly',
+        backgroundColor: 'magenta'
     },
     link: {
-        color: 'white',
+        color: 'black',
         textDecoration: 'none',
     },
 };
