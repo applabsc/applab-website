@@ -1,27 +1,54 @@
 import React, {Component} from 'react'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
+import {GlobalStyles} from '../util/config';
 
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.links = [
+            {
+                linkText: "Home",
+                url: "/"
+            },
+            {
+                linkText: "About Us",
+                url: "/"
+            },
+            {
+                linkText: "Semester Timeline",
+                url: "/"
+            },
+            {
+                linkText: "Mailing List",
+                url: "/"
+            },
+            {
+                linkText: "Contact Us",
+                url: "/"
+            }
+        ]
+    }
+
+    getHeaderLinks = () => (
+        this.links.map(linkInfo =>
+            <Link to={linkInfo.url} style={styles.link}>
+                {linkInfo.linkText}
+            </Link>
+        )
+    );
 
     render() {
         return (
             <div style={styles.stickyHeader}>
-                <div style={styles.title}>
-                    <h1>Applab USC</h1>
+
+                <div style={{...styles.title, ...styles.titleText}}>
+                    Applab USC
                 </div>
 
                 <div style={styles.links}>
-                    <Link to="/" style={styles.link}>
-                        Link 1
-                    </Link>
-
-                    <Link to="/" style={styles.link}>
-                        Link 2
-                    </Link>
-
-                    <Link to="/" style={styles.link}>
-                        Link 3
-                    </Link>
+                    {this.getHeaderLinks()}
                 </div>
             </div>
         )
@@ -33,20 +60,29 @@ const styles = {
         position: '-webkit-sticky', /* Safari */
         position: 'sticky',
         top: 0,
-        backgroundColor: 'aliceblue',
         flexDirection: 'row',
         display: 'flex',
         justifyContent: 'space-evenly',
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+        backgroundColor: 'green',
+        height: 75
+,    },
     title: {
         display: 'flex',
+        flex: 1,
         marginLeft: 20,
         marginRight: 20,
+        backgroundColor: 'aliceblue',
+
+    },
+    titleText: {
+        fontSize: 42,
+        fontWeight: 600,
+        fontFamily: GlobalStyles.headerFontStack
     },
     links: {
         display: 'flex',
-        flex: 1,
+        flex: 2,
         justifyContent: 'space-evenly',
         backgroundColor: 'magenta'
     },
