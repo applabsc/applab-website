@@ -32,8 +32,8 @@ class Header extends Component {
     }
 
     getHeaderLinks = () => (
-        this.links.map(linkInfo =>
-            <Link to={linkInfo.url} style={styles.link}>
+        this.links.map((linkInfo, i) =>
+            <Link to={linkInfo.url} style={styles.link} key={i.toString()}>
                 {linkInfo.linkText}
             </Link>
         )
