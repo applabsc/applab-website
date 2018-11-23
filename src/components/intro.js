@@ -6,9 +6,7 @@ class Intro extends Component {
 
     render() {
         console.log("THisProps", this.props);
-        return (
-            <Img fixed={this.props.data.backgroundImage.childImageSharp.fluid} />
-        )
+        return null;
     }
 }
 

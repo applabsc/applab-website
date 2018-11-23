@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Gatsby Default Starter',
+        title: 'Applab USC',
     },
     plugins: [
         `gatsby-plugin-sass`,
