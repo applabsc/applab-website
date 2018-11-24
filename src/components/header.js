@@ -35,7 +35,6 @@ const Header = () => (
 
 const styles = {
     stickyHeader: {
-        position: '-webkit-sticky', /* Safari */
         position: 'sticky',
         top: 0,
         flexDirection: 'row',
@@ -43,7 +42,8 @@ const styles = {
         justifyContent: 'space-evenly',
         alignItems: 'center',
         backgroundColor: 'green',
-        height: 75
+        height: 75,
+        zIndex: '10'
 ,    },
     title: {
         display: 'flex',
