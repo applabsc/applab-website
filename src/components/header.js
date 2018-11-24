@@ -1,77 +1,37 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Link} from 'gatsby'
 import {GlobalStyles} from '../util/config';
 
-class Header extends Component {
+const Header = () => (
+    <div style={styles.stickyHeader}>
 
-    constructor(props) {
-        super(props);
+        <div style={{...styles.title, ...styles.titleText}}>
+            Applab USC
+        </div>
 
-        this.links = [
-            {
-                linkText: "Home",
-                url: "/"
-            },
-            {
-                linkText: "About Us",
-                url: "/"
-            },
-            {
-                linkText: "Semester Timeline",
-                url: "/"
-            },
-            {
-                linkText: "Mailing List",
-                url: "http://eepurl.com/dEDGcH"
-            },
-            {
-                linkText: "Contact Us",
-                url: "/"
-            }
-        ]
-    }
-
-    getHeaderLinks = () => (
-        this.links.map((linkInfo, i) =>
-            <Link to={linkInfo.url} style={styles.link} key={i.toString()}>
-                {linkInfo.linkText}
+        <div style={styles.links}>
+            <Link to="/" style={styles.link}>
+                Home
             </Link>
-        )
-    );
 
-    render() {
-        return (
-            <div style={styles.stickyHeader}>
+            <Link to="/" style={styles.link}>
+                About Us
+            </Link>
 
-                <div style={{...styles.title, ...styles.titleText}}>
-                    Applab USC
-                </div>
+            <Link to="/" style={styles.link}>
+                Sponsors
+            </Link>
 
-                <div style={styles.links}>
-                    <Link to="/" style={styles.link}>
-                        Home
-                    </Link>
+            <a href="http://eepurl.com/dEDGcH" target="_blank" style={styles.link}>
+                Mailing List
+            </a>
 
-                    <Link to="/" style={styles.link}>
-                        About Us
-                    </Link>
-
-                    <Link to="/" style={styles.link}>
-                        Sponsors
-                    </Link>
-
-                    <a href="http://eepurl.com/dEDGcH" target="_blank" style={styles.link}>
-                        Mailing List
-                    </a>
-
-                    <Link to="/" style={styles.link}>
-                        Contact Us
-                    </Link>
-                </div>
-            </div>
-        )
-    }
-}
+            <Link to="/" style={styles.link}>
+                Contact Us
+            </Link>
+        </div>
+    </div>
+);
 
 const styles = {
     stickyHeader: {
