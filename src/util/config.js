@@ -15,4 +15,4 @@ fragment fluidImage on File {
             ...GatsbyImageSharpFluid
         }
     }
-`;
+}`;

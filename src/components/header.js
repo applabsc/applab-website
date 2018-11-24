@@ -22,7 +22,7 @@ class Header extends Component {
             },
             {
                 linkText: "Mailing List",
-                url: "/"
+                url: "http://eepurl.com/dEDGcH"
             },
             {
                 linkText: "Contact Us",
@@ -48,7 +48,25 @@ class Header extends Component {
                 </div>
 
                 <div style={styles.links}>
-                    {this.getHeaderLinks()}
+                    <Link to="/" style={styles.link}>
+                        Home
+                    </Link>
+
+                    <Link to="/" style={styles.link}>
+                        About Us
+                    </Link>
+
+                    <Link to="/" style={styles.link}>
+                        Sponsors
+                    </Link>
+
+                    <a href="http://eepurl.com/dEDGcH" target="_blank" style={styles.link}>
+                        Mailing List
+                    </a>
+
+                    <Link to="/" style={styles.link}>
+                        Contact Us
+                    </Link>
                 </div>
             </div>
         )

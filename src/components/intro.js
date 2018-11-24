@@ -10,16 +10,6 @@ class Intro extends Component {
     }
 }
 
-export const query = graphql`
-    query {
-        backgroundImage: file(relativePath: { eq: "app-store-connect.png" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`;
+
 
 export default Intro;
