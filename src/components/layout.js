@@ -4,12 +4,11 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import Intro from './intro'
 import './layout.css'
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -18,36 +17,35 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-          <Intro/>
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
+        render={data => (
+            <>
+                <Helmet
+                    title={data.site.siteMetadata.title}
+                    meta={[
+                        { name: 'description', content: 'Applab is USC\'s first student organization dedicated to mobile development. Join us today!' },
+                        { name: 'keywords', content: 'applab, usc, mobile development, organization, club, cs, computer science' },
+                    ]}
+                >
+                    <html lang="en" />
+                </Helmet>
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <div
+                    style={{
+                        margin: '0 auto',
+                        maxWidth: 960,
+                        padding: '0px 1.0875rem 1.45rem',
+                        paddingTop: 0,
+                    }}
+                >
+                    {children}
+                </div>
+            </>
+        )}
+    />
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout
