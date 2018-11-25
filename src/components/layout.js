@@ -9,14 +9,14 @@ import './layout.css'
 const Layout = ({ children }) => (
     <StaticQuery
         query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
+            query SiteTitleQuery {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+            }
+        `}
         render={data => (
             <>
                 <Helmet
@@ -28,7 +28,9 @@ const Layout = ({ children }) => (
                 >
                     <html lang="en" />
                 </Helmet>
+
                 <Header siteTitle={data.site.siteMetadata.title} />
+
                 <div
                     style={{
                         margin: '0 auto',
@@ -42,10 +44,10 @@ const Layout = ({ children }) => (
             </>
         )}
     />
-)
+);
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout

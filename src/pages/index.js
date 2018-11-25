@@ -11,10 +11,13 @@ const IndexPage = ({data}) => (
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <div style={{ maxWidth: '600px', marginBottom: '1.45rem', alignSelf: 'center' }}>
+
+        <div style={styles.container}>
+            <p>Now go build something great.</p>
             <Img
                 fluid={data.applabLogo.childImageSharp.fluid}
             />
+
         </div>
         <div style={{ maxWidth: '300px', marginBottom: '1.45rem', backgroundColor: 'blue' }}>
             <Img
@@ -30,8 +33,13 @@ const IndexPage = ({data}) => (
 
 const styles = {
     container: {
+
+
+        flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: '#FAFAFA'
+        backgroundColor: 'purple',
+        maxWidth: '600px',
+        marginBottom: '1.45rem',
     },
 
 }
