@@ -8,11 +8,20 @@ export const GlobalStyles = {
     fontStack: "Helvetica, Arial, sans-serif",
 };
 
+export const fixedImage = graphql`
+fragment fixedImage on File {
+    childImageSharp {
+        fixed {
+            ...GatsbyImageSharpFixed_noBase64
+        }
+    }
+}`;
+
 export const fluidImage = graphql`
 fragment fluidImage on File {
     childImageSharp {
         fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
         }
     }
 }`;
