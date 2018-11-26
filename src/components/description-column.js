@@ -14,7 +14,7 @@ export default class DescriptionColumn extends Component {
                     alt="icon"
                 />
 
-                <p style={styles.icon}>
+                <p style={styles.title}>
                     {this.props.title}
                 </p>
 
@@ -35,13 +35,14 @@ const styles = {
         height: '140px',
         width: '140px',
         paddingTop: '25px',
+        objectFit: 'contain',
     },
     title: {
         fontFamily: GlobalStyles.headerFontStack,
         fontWeight: 600,
         textAlign: 'center',
         color: 'white',
-        paddingTop: '20px',
+        paddingTop: '10px',
         display: 'block',
     },
     paragraph: {
@@ -52,7 +53,7 @@ const styles = {
         textAlign: 'center',
         color: 'white',
         display: 'block',
-        padding: '20px 20px 30px'
+        padding: '10px 20px 20px'
     },
 };
 
