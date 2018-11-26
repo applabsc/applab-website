@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from '../components/layout'
 import {GlobalStyles} from "../util/config";
+import Button from "../components/Button";
 
 const IndexPage = ({data}) => (
     <Layout>
@@ -23,19 +24,18 @@ const IndexPage = ({data}) => (
                 build real world projects and meet awesome peers.
             </p>
 
-            <div style={styles.applabLogo}>
+            <div style={styles.bannerImage}>
                 <Img
-                    fixed={data.appsBanner.childImageSharp.fluid}
+                    fluid={data.appsBanner.childImageSharp.fluid}
                 />
             </div>
 
-            <a
+            <Button
                 style={styles.applyButton}
                 href="https://www.typeform.com/"
-                target="_blank"
-            >
-                Apply here
-            </a>
+                shouldOpenInNewTab={true}
+                buttonText={'Apply here'}
+            />
         </div>
 
 
@@ -64,6 +64,7 @@ const styles = {
     bannerImage: {
         float: 'none',
         margin: 0,
+        width: '100%'
     },
     subtitleText: {
         fontFamily: GlobalStyles.fontStack,
@@ -90,9 +91,6 @@ const styles = {
         fontSize: '18px',
         fontFamily: GlobalStyles.headerFontStack,
         fontWeight: 500,
-        ":hover": {
-            border: 'solid black 2px',
-        }
     },
     centered: {
         float: 'none',
