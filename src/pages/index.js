@@ -85,7 +85,7 @@ const styles = {
         border: 'solid #00D2FF 2px',
         outline: 'none',
         cursor: 'pointer !important',
-        color: '#00D2FF',
+        color: GlobalStyles.colors.applabBlue,
         backgroundColor: 'transparent',
         textDecoration: 'none',
         fontSize: '18px',

@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import {GlobalStyles} from "../util/config";
 
 export default class Button extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            mouseHover: false,
+        }
+    }
+
     onMouseEnter = () => {
         this.setState({mouseHover: true})
     };
@@ -12,28 +20,10 @@ export default class Button extends Component {
     };
 
     getButtonStyle = () => {
-        console.log("TPS", this.props.style)
-        return {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '40px',
-            width: '150px',
-            borderRadius: '22px',
-            border: 'solid #00D2FF 2px',
-            outline: 'none',
-            cursor: 'pointer !important',
-            color: '#00D2FF',
-            backgroundColor: 'transparent',
-            textDecoration: 'none',
-            fontSize: '18px',
-            fontFamily: GlobalStyles.headerFontStack,
-            fontWeight: 500,
-        };
         if (this.state.mouseHover) {
             return {
                 ...this.props.style,
-                ...{backgroundColor: 'magenta'}
+                ...{backgroundColor: GlobalStyles.colors.applabBlue, color: 'white'}
             }
         } else {
             return this.props.style;
