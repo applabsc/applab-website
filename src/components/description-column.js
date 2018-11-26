@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import {GlobalStyles} from "../util/config";
 
 export default class DescriptionColumn extends Component {
@@ -9,6 +11,7 @@ export default class DescriptionColumn extends Component {
                 <img
                     style={styles.icon}
                     src={this.props.image}
+                    alt="icon"
                 />
 
                 <p style={styles.icon}>
@@ -23,7 +26,7 @@ export default class DescriptionColumn extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = {
     container: {
         flex: 1,
         flexDirection: 'column',
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
         display: 'block',
         padding: '20px 20px 30px'
     },
-});
+};
 
 DescriptionColumn.propTypes = {
     image: PropTypes.string.isRequired,
