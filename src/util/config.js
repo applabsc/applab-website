@@ -1,6 +1,6 @@
 export const pages = {
     home: "home"
-}
+};
 
 
 export const GlobalStyles = {

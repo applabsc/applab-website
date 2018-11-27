@@ -15,6 +15,14 @@ const Layout = ({ children }) => (
                         title
                     }
                 }
+                allFile {
+                    edges {
+                        node {
+                            relativePath
+                            name
+                        }
+                    }
+                }
             }
         `}
         render={data => (
@@ -34,7 +42,6 @@ const Layout = ({ children }) => (
                 <div
                     style={{
                         margin: '0 auto',
-                        maxWidth: 960,
                         padding: 0,
                         paddingTop: 0,
                     }}
