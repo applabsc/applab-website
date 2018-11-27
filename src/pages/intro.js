@@ -24,7 +24,6 @@ const IntroPage = () => (
             <div>
                 <div style={styles.applabLogo}>
                     <Img
-
                         fluid={data.applabLogo.childImageSharp.fluid}
                     />
                 </div>

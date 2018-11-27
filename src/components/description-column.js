@@ -28,8 +28,10 @@ export default class DescriptionColumn extends Component {
 
 const styles = {
     container: {
+        display: 'flex',
         flex: 1,
         flexDirection: 'column',
+        alignItems: 'center'
     },
     icon: {
         height: '140px',

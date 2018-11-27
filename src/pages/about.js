@@ -5,6 +5,94 @@ import {GlobalStyles} from "../util/config";
 import IndexPage from "./index";
 import DescriptionColumn from "../components/description-column";
 
+const descriptionColumns = [
+    {
+        title: 'LEARN',
+        color: '#F25C62',
+        image: "https://s3-us-west-1.amazonaws.com/applab-sc/idea.png",
+        paragraph: "Learn about a different topic within mobile development every semester. We'll spend the first part" +
+        " of the semester learning about a topic from scratch. No prior experience required!"
+    },
+    {
+        title: 'BUILD',
+        color: '#3A506B',
+        image: "https://s3-us-west-1.amazonaws.com/applab-sc/idea.png",
+        paragraph: "In the second half of the semester, apply the skills you've learned to build a mobile app. At the " +
+        "end of the semester, showcase your app to industry partners at demo day, all while receiving plenty of support" +
+        " and guidance along the way."
+    },
+    {
+        title: 'CONNECT',
+        color: '#3C3C3C',
+        image: "https://s3-us-west-1.amazonaws.com/applab-sc/marshall.png",
+        paragraph: "Attend tech talks throughout the semester where you'll have the chance to connect to recruiters and" +
+        " learn from engineers from premier tech companies."
+    },
+    {
+        title: 'BELONG',
+        color: '#4ABBEB',
+        image: "https://s3-us-west-1.amazonaws.com/applab-sc/social.png",
+        paragraph: "At Applab, you'll find a supportive community of developers. Attend our various social events and " +
+        "forge lasting friendships"
+    },
+];
+
+const getDescriptionColumnsWide = () => (
+    <div style={styles.columns}>
+        {descriptionColumns.map((descriptionColumn, i) => (
+            <DescriptionColumn
+                key={i.toString()}
+                title={descriptionColumn.title}
+                color={descriptionColumn.color}
+                image={descriptionColumn.image}
+                paragraph={descriptionColumn.paragraph}
+            />
+        ))}
+    </div>
+);
+
+const getDescriptionColumnsMedium = () => (
+    <div style={styles.rows}>
+        <div style={styles.columns}>
+            {descriptionColumns.slice(0, 2).map((descriptionColumn, i) => (
+                <DescriptionColumn
+                    key={i.toString()}
+                    title={descriptionColumn.title}
+                    color={descriptionColumn.color}
+                    image={descriptionColumn.image}
+                    paragraph={descriptionColumn.paragraph}
+                />
+            ))}
+        </div>
+
+        <div style={styles.columns}>
+            {descriptionColumns.slice(2, 4).map((descriptionColumn, i) => (
+                <DescriptionColumn
+                    key={i.toString()}
+                    title={descriptionColumn.title}
+                    color={descriptionColumn.color}
+                    image={descriptionColumn.image}
+                    paragraph={descriptionColumn.paragraph}
+                />
+            ))}
+        </div>
+    </div>
+);
+
+const getDescriptionColumnsSmol = () => (
+    <div style={styles.rows}>
+        {descriptionColumns.map((descriptionColumn, i) => (
+            <DescriptionColumn
+                key={i.toString()}
+                title={descriptionColumn.title}
+                color={descriptionColumn.color}
+                image={descriptionColumn.image}
+                paragraph={descriptionColumn.paragraph}
+            />
+        ))}
+    </div>
+);
+
 const About = () => (
     <div>
         <h1>
@@ -31,41 +119,17 @@ const About = () => (
             topics include iOS, Android and Flutter.
         </p>
 
-        <MediaQuery maxWidth={1224}>
-            <div>SMOL</div>
+        <MediaQuery maxWidth={450}>
+            {getDescriptionColumnsSmol()}
         </MediaQuery>
 
-        <MediaQuery minWidth={1224}>
-            <div>BIG</div>
+        <MediaQuery minWidth={450} maxWidth={900}>
+            {getDescriptionColumnsMedium()}
         </MediaQuery>
 
-        <div style={styles.columns}>
-            <DescriptionColumn
-                title={'LEARN'}
-                color={'#F25C62'}
-                image={"https://s3-us-west-1.amazonaws.com/applab-sc/idea.png"}
-                paragraph={"Learn about a different topic within mobile development every semester. We'll spend the first part of the semester learning about a topic from scratch. No prior experience required! "}
-            />
-            <DescriptionColumn
-                title={'BUILD'}
-                color={'#3A506B'}
-                image={"https://s3-us-west-1.amazonaws.com/applab-sc/code.png"}
-                paragraph={"In the second half of the semester, apply the skills you've learned to build a mobile app. At the end of the semester, showcase your app to industry partners at demo day, all while receiving plenty of support and guidance along the way."}
-            />
-            <DescriptionColumn
-                title={'CONNECT'}
-                color={'#3C3C3C'}
-                image={"https://s3-us-west-1.amazonaws.com/applab-sc/marshall.png"}
-                paragraph={"Attend tech talks throughout the semester where you'll have the chance to connect to recruiters and learn from \n" +
-                "engineers from premier tech companies."}
-            />
-            <DescriptionColumn
-                title={'BELONG'}
-                color={'#4ABBEB'}
-                image={"https://s3-us-west-1.amazonaws.com/applab-sc/social.png"}
-                paragraph={"One of the core principles we're built on is community. At Applab, you'll find a supportive community of developers. Attend our various social events and forge lasting friendships."}
-            />
-        </div>
+        <MediaQuery minWidth={900}>
+            {getDescriptionColumnsWide()}
+        </MediaQuery>
     </div>
 );
 
@@ -79,6 +143,11 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row',
+    },
+    rows: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'column',
     },
 };
 
