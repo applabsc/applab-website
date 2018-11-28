@@ -7,6 +7,7 @@ import DescriptionColumn from '../components/description-column';
 import About from "./about";
 import IntroPage from "./intro";
 import Img from 'gatsby-image'
+import FrequentlyAskedQuestions from "./faq";
 
 const IndexPage = ({data}) => {
     console.log("DATA", data)
@@ -23,6 +24,8 @@ const IndexPage = ({data}) => {
 
 
         <About/>
+
+        <FrequentlyAskedQuestions/>
 
         <Link to="/page-2/">Go to paeg 2</Link>
 
