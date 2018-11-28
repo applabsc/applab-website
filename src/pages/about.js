@@ -1,22 +1,25 @@
 import React from 'react'
 import MediaQuery from 'react-responsive';
 
-import {GlobalStyles} from "../util/config";
-import IndexPage from "./index";
-import DescriptionColumn from "../components/description-column";
+import code from '../images/code.png';
+import idea from '../images/idea.png';
+import marshall from '../images/marshall.png';
+import social from '../images/social.png';
+
+import DescriptionColumn from '../components/description-column';
 
 const descriptionColumns = [
     {
         title: 'LEARN',
         color: '#F25C62',
-        image: "https://s3-us-west-1.amazonaws.com/applab-sc/idea.png",
+        image: idea,
         paragraph: "Learn about a different topic within mobile development every semester. We'll spend the first part" +
         " of the semester learning about a topic from scratch. No prior experience required!"
     },
     {
         title: 'BUILD',
         color: '#3A506B',
-        image: "https://s3-us-west-1.amazonaws.com/applab-sc/idea.png",
+        image: code,
         paragraph: "In the second half of the semester, apply the skills you've learned to build a mobile app. At the " +
         "end of the semester, showcase your app to industry partners at demo day, all while receiving plenty of support" +
         " and guidance along the way."
@@ -24,14 +27,14 @@ const descriptionColumns = [
     {
         title: 'CONNECT',
         color: '#3C3C3C',
-        image: "https://s3-us-west-1.amazonaws.com/applab-sc/marshall.png",
+        image: marshall,
         paragraph: "Attend tech talks throughout the semester where you'll have the chance to connect to recruiters and" +
         " learn from engineers from premier tech companies."
     },
     {
         title: 'BELONG',
         color: '#4ABBEB',
-        image: "https://s3-us-west-1.amazonaws.com/applab-sc/social.png",
+        image: social,
         paragraph: "At Applab, you'll find a supportive community of developers. Attend our various social events and " +
         "forge lasting friendships"
     },

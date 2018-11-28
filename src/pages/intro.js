@@ -1,12 +1,9 @@
 import React from 'react'
 
 import Img from 'gatsby-image'
-import {graphql} from 'gatsby'
-import {GlobalStyles} from "../util/config";
-
+import {graphql, StaticQuery} from 'gatsby'
+import {GlobalStyles} from '../util/config';
 import Button from '../components/button';
-import {StaticQuery} from "../../.cache/gatsby-browser-entry";
-
 
 const IntroPage = () => (
     <StaticQuery
