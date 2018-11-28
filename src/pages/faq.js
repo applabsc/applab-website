@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {StaticQuery} from '../../.cache/gatsby-browser-entry';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import {FiChevronUp} from 'react-icons/fi';
 
 const questionAnswers = [
     {
@@ -25,14 +26,14 @@ const renderQuestion = (question) => {
     return (
         <div className={'questionContainer'}>
             <div>{question}</div>
-            <Icon className={this.state.iconClass} icon={chevronUp}/>
+            <FiChevronUp/>
         </div>
     )
 };
 
 const FrequentlyAskedQuestions = () => (
     <ExpansionPanel
-        children={}
+        children={renderQuestion("erjbiu")}
     />
 );
 
